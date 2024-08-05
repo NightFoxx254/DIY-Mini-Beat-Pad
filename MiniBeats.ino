@@ -4,22 +4,40 @@
 #define DATA_PIN 0
 #define speakerPin 9
 CRGB leds[NUM_LEDS]
-int rgb = 0;
 
-void lights(int rgb,int pos){
-  if(rgb == 0){
-    rgb++;
-    led[pos] = CRGB::Red;
-  }else if(rgb == 1){
-    rgb++;
-    led[pos] = CRGB::Green;
-  }else if(rgb == 2){
-    rgb++;
-    led[pos] = CRGB::Blue;
-  }else if(rgb == 3){
-    rgb == 0;
-    led[pos] == CRGB::Black;
+void drum(int freq, int time)){
+  for(int i = 0; i <time; i++{
+  tone(speakerPin,freq);
+  delay(1);
+  int elap = time-i*time-i;
+  freq -= 0.08*elap;
   }
+}
+
+void cmaj7(int time){
+  for(i = 0; i<time/3;i++){
+    tone(speakerPin,261);
+    delay(1);
+    tone(speakerPin,329);
+    delay(1);
+    tone(speakerPin,391);
+    delay(1)
+  }
+}
+
+void gmaj7(int time){
+  for(i = 0; i<time/3;i++){
+    tone(speakerPin,391);
+    delay(1);
+    tone(speakerPin,294);
+    delay(1);
+    tone(speakerPin,698);
+    delay(1);
+  }
+}
+
+void lights(int pos){
+  
 }
 
 const byte ROWS = 4; 
@@ -50,6 +68,7 @@ void loop(){
   }
   if (customKey == "b"){
     lights(rgb,1);
+    drum(200,50);
   }
   if (customKey == "c"){
     lights(rgb,2);
