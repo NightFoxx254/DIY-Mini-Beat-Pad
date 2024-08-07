@@ -43,7 +43,7 @@ void lights(int pos, bool &check) {
     leds[pos] = CRGB::Blue;
     check = true;
   } else if (pos == 3 || pos == 7 || pos == 11 || pos == 15) {
-    leds[pos] = CRGB::White;
+    leds[pos] = CRGB::Purple;
     check = true;
   }
 }
@@ -125,10 +125,10 @@ void loop() {
       }delay(1);
     }
     noTone(speakerPin);
-    leds[1+(i*4)] == CRGB::White;
-    leds[2+(i*4)] == CRGB::White;
-    leds[3+(i*4)] == CRGB::White;
-    leds[4+(i*4)] == CRGB::White;
+    leds[1+(i*4)] == CRGB::Red;
+    leds[2+(i*4)] == CRGB::Green;
+    leds[3+(i*4)] == CRGB::Blue;
+    leds[4+(i*4)] == CRGB::Purple;
     leds.show()
   }
 }
